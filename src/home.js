@@ -1,5 +1,4 @@
 
-
 function genHome() {
     console.log('hello');
 }

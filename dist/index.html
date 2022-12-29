@@ -9,6 +9,68 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <p>To-Do List</p>
+    <div class="page-container">
+        <!--Header Section-->
+        <header class="header">
+            <!--Header will be grid with two children, header-title and header-date container-->
+            <h1 class="header-title">The Weekly Plot</h1>
+            <div class="header-date">
+                <p>12/29/2022</p>
+                <p>Thursday</p>
+            </div>
+        </header>
+
+        <!--Main Section-->
+        <main class="main">
+            <nav class="sidebar">
+                <div class="sidebar-home">
+                    <button class="sidebar-button nav-selected" id="homeButton">Home</button>
+                </div>
+                <div class="sidebar-today">
+                    <button class="sidebar-button" id="todayButton">Today</button>
+                </div>
+                <div class="sidebar-week">
+                    <button class="sidebar-button" id="weekButton">Week</button>
+                </div>
+                <div class="sidebar-projects">
+                    <button class="sidebar-button" id="projectButton">Projects</button>
+                </div>
+                <div class="sidebar-notes">
+                    <button class="sidebar-button" id="notesButton">Notes</button>
+                </div>
+                <div class="sidebar-add-task">
+                    <button id="addButton">+</button>
+                </div>
+            </nav>
+            <div class="main-content">
+                <p>MAIN CONTENT</p>
+            </div>
+        </main>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <div class="modal-container" id="modal-container" >
+                    <h3 class="modal-title">Create a new...</h3>
+                    <nav class="modal-sidebar">
+                        <button class="modal-sidebar-button modal-nav-selected" id="modal-todo">To Do</button>
+                        <button class="modal-sidebar-button" id="modal-project">Project</button>
+                        <button class="modal-sidebar-button" id="modal-note">Note</button>
+                    </nav>
+                    <div class="modal-main">
+                        <form class="todo-form" id="todo-form" >
+                            <input type="text" placeholder="Title" id="title" name="title">
+                            <input type="text" placeholder="Details" id="details" name="details">
+                            <div class="duedateContainer">
+                                <label for="dueDate">Due Date: </label>
+                                <input type="date" id="dueDate" name="dueDate"
+                                    value="2022-12-29" min="2022-12-01" max="2023-12-31">
+                            </div>
+                            <button id="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,10 +1,237 @@
 :root {
-    margin: 0;
-    padding: 0;
+    --header-color: #acafdc;
+    --header-text-color: #e6e6ea;
+    --sidebar-color: #d0d0d5;
+    --text-color: #2f2f31;
+    --background-color: #e6e6ea;
+    --button-font: 24px;
+    --title-font: 40px;
+    --header-font: 24px;
+    --text-font: 16px;
+    --button-hover: #e1e1e7;
+    --add-item-font: 48px;
+    --modal-font: 18px;
 }
 
 ::before,
 ::after,
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* MODAL STYLING */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 175px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    width: 750px;
+    height: 400px;
+}
+
+.modal-container {
+    display: grid;
+    grid-template-areas: 
+        "modal-title modal-title"
+        "modal-sidebar modal-content";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 50px 350px;
+}
+
+.modal-title {
+    grid-area: modal-title;
+    background-color: var(--header-color);
+    color: var(--header-text-color);
+    padding: 10px;
+    font-size: var(--button-font);
+}
+
+.modal-sidebar {
+    grid-area: modal-sidebar;
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 40px 40px;
+    padding: 10px;
+}
+
+.modal-main {
+    grid-area: modal-content;
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.modal-sidebar-button {
+    padding: 5px 10px;
+    font-size: var(--modal-font);
+    color: var(--text-color);
+    border: 2px solid var(--sidebar-color);
+    background-color: var(--sidebar-color);
+    width: 150px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.modal-sidebar-button:hover {
+    background-color: var(--button-hover);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.modal-sidebar-button:hover:before {
+    content: '//';
+    font-weight: 700;
+    margin-right: .7rem;
+}
+
+.modal-nav-selected {
+    font-weight: 700;
+}
+
+.modal-nav-selected::before {
+    content: '//';
+    font-weight: 700;
+    margin-right: .7rem;
+}
+
+
+/* BUTTON STYLING */
+.sidebar-button {
+    padding: 5px 10px;
+    font-size: var(--button-font);
+    color: var(--text-color);
+    border: 2px solid var(--sidebar-color);
+    background-color: var(--sidebar-color);
+    width: 200px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sidebar-button:hover {
+    background-color: var(--button-hover);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.sidebar-button:hover:before {
+    content: '//';
+    font-weight: 700;
+    margin-right: .7rem;
+}
+
+#addButton {
+    padding: 5px;
+    font-size: var(--add-item-font);
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    color: var(--text-color);
+    background-color: var(--header-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+#addButton:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+}
+
+.nav-selected {
+    font-weight: 700;
+}
+
+.nav-selected::before {
+    content: '//';
+    font-weight: 700;
+    margin-right: .7rem;
+}
+
+
+html {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-color);
+    color: var(--header-text-color);
+    grid-area: header;
+    padding-left: 15px;
+}
+
+.header-title {
+    font-size: var(--title-font);
+}
+
+.header-date {
+    font-size: var(--header-font);
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+        "sidebar main-content";
+}
+
+.page-container {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 125px 1fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    grid-area: sidebar;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px 1fr;
+    gap: 5px;
+    justify-items: flex-start;
+    align-items: center;
+}
+
+
+
+.sidebar-add-task {
+    align-self: flex-end;
+}
+
+.main-content {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    grid-area: main-content;
+    font-size: var(--text-font);
+    padding: 15px;
 }

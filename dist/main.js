@@ -16,7 +16,7 @@
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n\nfunction genHome() {\n    console.log('hello');\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (genHome);\n\n//# sourceURL=webpack://todolist/./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nfunction genHome() {\n    console.log('hello');\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (genHome);\n\n//# sourceURL=webpack://todolist/./src/home.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n\n\n(0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://todolist/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n\n\n\n\n/* MAIN FUNCTIONALITY */\n\nfunction navController() {\n    /* ADD ITEM MODAL */\n    const addTaskBtn = document.getElementById('addButton');\n    const modal = document.getElementById('modal');\n\n    addTaskBtn.addEventListener('click', () => {\n        modal.style.display = \"block\";\n    })\n\n    window.addEventListener('click', (e) => {\n        if (e.target == modal) {\n            modal.style.display = \"none\";\n        }\n    })\n\n    /* SIDEBAR BUTTON LISTENERS */\n    const sidebarButtons = document.querySelectorAll('.sidebar-button')\n    sidebarButtons.forEach(button => {\n        button.addEventListener('click', (e) => {\n            if (e.target.classList.contains('nav-selected')) return;\n            setActiveButton(button);\n        })\n    })\n\n    function setActiveButton(button) {\n        sidebarButtons.forEach((button) => {\n            if (button !== this) {\n                button.classList.remove('nav-selected');\n            }\n        })\n        button.classList.add('nav-selected');\n    }\n\n    /* MODAL SIDEBAR BUTTON LISTENERS */\n    const modalSidebarButtons = document.querySelectorAll('.modal-sidebar-button');\n    modalSidebarButtons.forEach(button => {\n        button.addEventListener('click', (e) => {\n            if (e.target.classList.contains('modal-nav-selected')) return;\n            setActiveTask(button);\n        })\n    })\n\n    function setActiveTask(button) {\n        modalSidebarButtons.forEach((button) => {\n            if (button !== this) {\n                button.classList.remove('modal-nav-selected');\n            }\n        })\n        button.classList.add('modal-nav-selected');\n    }\n}\n\nnavController();\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
 
 /***/ })
 
