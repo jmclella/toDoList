@@ -52,21 +52,11 @@
                 <div class="modal-container" id="modal-container" >
                     <h3 class="modal-title">Create a new...</h3>
                     <nav class="modal-sidebar">
-                        <button class="modal-sidebar-button modal-nav-selected" id="modal-todo">To Do</button>
+                        <button class="modal-sidebar-button" id="modal-todo">To Do</button>
                         <button class="modal-sidebar-button" id="modal-project">Project</button>
                         <button class="modal-sidebar-button" id="modal-note">Note</button>
                     </nav>
-                    <div class="modal-main">
-                        <form class="todo-form" id="todo-form" >
-                            <input type="text" placeholder="Title" id="title" name="title">
-                            <input type="text" placeholder="Details" id="details" name="details">
-                            <div class="duedateContainer">
-                                <label for="dueDate">Due Date: </label>
-                                <input type="date" id="dueDate" name="dueDate"
-                                    value="2022-12-29" min="2022-12-01" max="2023-12-31">
-                            </div>
-                            <button id="submit">Submit</button>
-                        </form>
+                    <div class="modal-main" id="modal-main">
                     </div>
                 </div>
             </div>

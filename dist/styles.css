@@ -9,6 +9,8 @@
     --header-font: 24px;
     --text-font: 16px;
     --button-hover: #e1e1e7;
+    --submit-button: #7dbe7c;
+    --submit-hover: #93ce92;
     --add-item-font: 48px;
     --modal-font: 18px;
 }
@@ -113,6 +115,122 @@
     margin-right: .7rem;
 }
 
+/* MODAL FORMS */
+/* to-do form */
+#todo-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    height: 300px;
+}
+
+#todo-title {
+    width: 100%;
+    height: 35px;
+    background-color: var(--background-color);
+    border: none;
+}
+
+#todo-dueDate {
+    color: var(--header-color);
+    border: 2px solid var(--header-color);
+    border-radius: 4px;
+}
+
+#todo-submit {
+    background-color: var(--submit-button);
+    font-size: 20px;
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    width: 150px;
+    justify-self: flex-end;
+}
+
+#todo-submit:hover {
+    background-color: var(--submit-hover);
+    cursor: pointer;
+}
+
+.todo-bottom-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+/*project form*/
+#project-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    height: 300px;
+}
+
+#project-title {
+    width: 100%;
+    height: 35px;
+    background-color: var(--background-color);
+    border: none;
+}
+
+.project-bottom-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#project-submit {
+    background-color: var(--submit-button);
+    font-size: 20px;
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    width: 150px;
+    justify-self: flex-end;
+}
+
+#project-submit:hover {
+    background-color: var(--submit-hover);
+    cursor: pointer;
+}
+
+/*note form*/
+#note-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    height: 300px;
+}
+
+#note-title {
+    width: 100%;
+    height: 35px;
+    background-color: var(--background-color);
+    border: none;
+}
+
+.note-bottom-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#note-submit {
+    background-color: var(--submit-button);
+    font-size: 20px;
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    width: 150px;
+    justify-self: flex-end;
+}
+
+#note-submit:hover {
+    background-color: var(--submit-hover);
+    cursor: pointer;
+}
+
+
+
 
 /* BUTTON STYLING */
 .sidebar-button {
@@ -196,6 +314,11 @@ main {
     grid-template-columns: 1fr 4fr;
     grid-template-areas: 
         "sidebar main-content";
+}
+
+input, label {
+    font-size: 20px;
+    padding: 5px;
 }
 
 .page-container {

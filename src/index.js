@@ -1,4 +1,4 @@
-import genHome from './home';
+import genForm from './form';
 
 
 
@@ -11,6 +11,8 @@ function navController() {
 
     addTaskBtn.addEventListener('click', () => {
         modal.style.display = "block";
+        setActiveTask(modalSidebarButtons[0]);
+        genForm(modalSidebarButtons[0].id);
     })
 
     window.addEventListener('click', (e) => {
@@ -43,6 +45,7 @@ function navController() {
         button.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal-nav-selected')) return;
             setActiveTask(button);
+            genForm(button.id)
         })
     })
 
