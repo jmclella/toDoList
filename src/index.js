@@ -1,5 +1,5 @@
 import genForm from './form';
-
+import {todoList} from './todo';
 
 
 /* MAIN FUNCTIONALITY */
@@ -27,6 +27,7 @@ function navController() {
         button.addEventListener('click', (e) => {
             if (e.target.classList.contains('nav-selected')) return;
             setActiveButton(button);
+            console.log(todoList);
         })
     })
 
@@ -60,3 +61,5 @@ function navController() {
 }
 
 navController();
+
+
