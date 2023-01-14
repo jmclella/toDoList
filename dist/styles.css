@@ -13,6 +13,7 @@
     --submit-hover: #93ce92;
     --add-item-font: 48px;
     --modal-font: 18px;
+    --red-button-color: #e37878;
 }
 
 ::before,
@@ -357,4 +358,57 @@ input, label {
     grid-area: main-content;
     font-size: var(--text-font);
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todoCard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--sidebar-color);
+    border: 4px solid var(--text-color);
+    border-radius: 8px;
+    height: 75px;
+    padding: 10px;
+}
+
+
+.rightCardDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.rightCardDiv > button {
+    padding: 5px;
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    background-color: var(--red-button-color);
+    width: 125px;
+}
+
+.rightCardDiv > button:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.rightCardDiv > button.isCompleted {
+    background-color: var(--submit-button);
+}
+
+
+.noteCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background-color: var(--sidebar-color);
+    border: 4px solid var(--text-color);
+    border-radius: 8px;
+    padding: 10px;
 }

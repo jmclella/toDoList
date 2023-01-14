@@ -1,6 +1,6 @@
-import createTodo from './todo';
+import {createTodo} from './todo';
 import createProject from './project';
-import createNote from './note';
+import {createNote} from './note';
 
 const formSection = document.getElementById('modal-main');
 const modal = document.getElementById('modal');
@@ -28,7 +28,7 @@ function genTodoForm() {
             <div class="todo-duedateContainer">
                 <label for="todo-dueDate">Due Date: </label>
                 <input type="date" id="todo-dueDate" name="todo-dueDate"
-                    value="2022-12-29" min="2022-12-01" max="2023-12-31" required>
+                    value="2023-01-14" min="2022-12-01" max="2023-12-31" required>
             </div>
             <button class="submit" id="todo-submit">Add To-Do</button>
         </div>
@@ -77,6 +77,8 @@ function genNoteForm() {
     noteForm.addEventListener('submit', (event) => {
         event.preventDefault();
         createNote();
+        modal.style.display = "none";
+        console.log('submittedNote');
     })
 }
 

@@ -1,5 +1,9 @@
 import genForm from './form';
+import {noteList} from './note';
+import {genNoteContent} from './note';
 import {todoList} from './todo';
+import {genHomeContent} from './todo';
+import {clearMainContent} from './todo';
 
 
 /* MAIN FUNCTIONALITY */
@@ -27,7 +31,15 @@ function navController() {
         button.addEventListener('click', (e) => {
             if (e.target.classList.contains('nav-selected')) return;
             setActiveButton(button);
-            console.log(todoList);
+            let buttonTarget = e.target.id;
+            console.log(buttonTarget);
+            if (buttonTarget === 'homeButton') {
+                genHomeContent(todoList);
+            } else if (buttonTarget === 'notesButton') {
+                genNoteContent(noteList);
+            } else {
+                clearMainContent();
+            }
         })
     })
 
