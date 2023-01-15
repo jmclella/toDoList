@@ -1,5 +1,18 @@
 
-const todoList = []
+let todoList = [
+    {
+        title: 'Run 3 miles',
+        dueDate: '2023-01-14',
+        completed: false,
+        category: ['home'],
+    },
+    {
+        title: 'Make Bed',
+        dueDate: '2023-01-16',
+        completed: true,
+        category: ['home'],
+    }
+]
 const mainContent = document.querySelector('.main-content');
 
 
@@ -39,21 +52,28 @@ function genHomeContent(todoList) {
         rightCardDiv.classList.add('rightCardDiv');
 
         let todoTitle = document.createElement('p');
-        todoTitle.textContent = todoList[i].getTitle();
+        todoTitle.textContent = todoList[i].title;
 
         let todoDueDate = document.createElement('p');
-        todoDueDate.textContent = todoList[i].getDueDate();
+        todoDueDate.textContent = todoList[i].dueDate;
 
         let todoCompleted = document.createElement('button');
-        todoCompleted.textContent = 'Not Completed';
+        if (todoList[i].completed === false) {
+            todoCompleted.textContent = 'Not Completed';
+        } else {
+            todoCompleted.textContent = 'Complete';
+            todoCompleted.classList.toggle('isCompleted')
+        }
 
         todoCompleted.addEventListener('click', (e) => {
-            e.target.classList.toggle('isCompleted');
-            let tempTextContent = e.target.textContent;
-            if (tempTextContent === 'Not Completed') {
-                e.target.textContent = 'Complete';
+            if (todoList[i].completed === false) {
+                todoList[i].completed = true;
+                todoCompleted.classList.toggle('isCompleted');
+                todoCompleted.textContent = 'Complete';
             } else {
-                e.target.textContent = 'Not Completed';
+                todoList[i].completed = false;
+                todoCompleted.classList.toggle('isCompleted');
+                todoCompleted.textContent = 'Not Completed';
             }
         })
         

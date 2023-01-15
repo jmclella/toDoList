@@ -1,6 +1,15 @@
 import {clearMainContent} from "./todo";
 
-const noteList = [];
+let noteList = [
+    {
+        noteText: 'Need apples, bananas, blueberries and more fruit for peanut butter banana smoothies',
+        category: ['note'],
+    },
+    {
+        noteText: 'Continue developing project functionality on toDoList project in order to finish this once and for all!',
+        category: ['note'],
+    }
+];
 const mainContent = document.querySelector('.main-content');
 
 function createNote() {
@@ -30,7 +39,8 @@ function genNoteContent(noteList) {
         noteCard.classList.add('noteCard');
 
         let noteText = document.createElement('p');
-        noteText.textContent = noteList[i].getNoteText();
+        noteText.classList.add('noteText');
+        noteText.textContent = noteList[i].noteText;
 
         noteCard.appendChild(noteText);
         mainContent.appendChild(noteCard);

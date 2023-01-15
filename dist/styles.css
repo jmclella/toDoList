@@ -360,6 +360,7 @@ input, label {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -406,9 +407,16 @@ input, label {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 350px;
     background-color: var(--sidebar-color);
     border: 4px solid var(--text-color);
     border-radius: 8px;
     padding: 10px;
+}
+
+.noteText {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    font-size: 24px;
 }
